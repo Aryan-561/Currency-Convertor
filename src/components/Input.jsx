@@ -16,10 +16,10 @@ export default function Input({
     const amountInputId = useId();
     return (
         <>
-            <div className=' flex items-center  p-2 2xl:p-4 justify-around mx-auto w-[90%] sm:w-[50vw] lg:w-[35vw]  font-semibold bg-blue-900  rounded-lg text-white border-2 text-lg lg:text-2xl 2xl:text-4xl  '>
+            <div className=' flex items-center  p-2 2xl:p-4 justify-around   mx-auto w-[90%] sm:w-[50vw] xl:w-[40vw]  font-semibold bg-blue-900  rounded-lg text-white border-2 text-lg lg:text-2xl 2xl:text-4xl  '>
 
                 <div className=' w-1/2  '>
-                    <label className='inline-block  mb-3 lg:mb-4 ' htmlFor={amountInputId}>{label}</label>
+                    <label className='inline-block  mb-3 lg:mb-6 ' htmlFor={amountInputId}>{label}</label>
 
                     <div className='bg-blue-500 rounded-md flex  p-1 lg:p-2 pl-2 border-2 border-blue-100'>
 
@@ -28,6 +28,7 @@ export default function Input({
                         <input type="number"
                             value={amount} id={amountInputId} 
                             className='w-[100%] pl-2 rounded-md outline-none bg-transparent placeholder:text-white' placeholder='0'
+                            min="1"
                             onChange={(e) => {
                                 onAmountChange &&
                                 onAmountChange(Number(e.target.value))

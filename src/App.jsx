@@ -9,7 +9,7 @@ import swapImg from './assets/swap.png'
 
 function App() {
 
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState('');
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("INR");
 
@@ -23,13 +23,13 @@ function App() {
   const options = Object.keys(currencyCode);
 
   const clear = () => {
-    setAmount(0)
-    setConvertAmount(0)
+    setAmount('')
+    setConvertAmount('')
   }
 
   const rate = useCurrencyInfo(from.toLocaleLowerCase(), to.toLocaleLowerCase());
 
-  const [convertAmount, setConvertAmount] = useState();
+  const [convertAmount, setConvertAmount] = useState('');
   const convertCurrency = () => {
     setConvertAmount(amount * rate);
     // console.log(convertAmount);
@@ -44,7 +44,7 @@ function App() {
   return (
     <>
       <div className='w-full h-screen bg-[url("https://images.unsplash.com/photo-1651341050677-24dba59ce0fd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGN1cnJlbmN5JTIwY29udmVyc2lvbnxlbnwwfHwwfHx8MA%3D%3D")] bg-cover flex justify-center items-center flex-col '>
-        <div className=' w-[95%] rounded-lg sm:w-[60%] lg:w-[45%] py-4 2xl:py-8 bg-blue-900/30 border-[3px] '>
+        <div className=' w-[95%] rounded-lg sm:w-[60%] xl:w-[50%] py-4 2xl:py-8 bg-blue-900/30 border-[3px] '>
 
           <h1 className='text-white text-3xl sm:text-4xl 2xl:text-[4rem] text-center font-bold  mb-8 2xl:mb-16  '>Currency Convertor</h1>
           <Input
