@@ -1,8 +1,25 @@
-# React + Vite
+# Currency Convertor
+This is a simple currency converter web application built using React and Vite. It allows users to convert between different currencies based on the latest exchange rates.
+## Live Demo
+[Click Here](https://aryan-561.github.io/Currency-Convertor/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology Used
+- React: A JavaScript library for building user interfaces.
+- Vite: A next-generation frontend tooling.
+- Tailwind CSS: A utility-first CSS framework for styling.
 
-Currently, two official plugins are available:
+## Preview
+![localhost_5174_Currency-Convertor](https://github.com/Aryan-561/Currency-Convertor/assets/146006037/3417c1be-6b20-4cb2-a822-e0baeea4034d)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Convert between various currencies.
+- Real-time exchange rates fetched from a reliable API.
+- With currency symbol and country flag.
+- Responsive.
+- Simple and intuitive user interface.
+
+## API Usage
+- [currency API Repo](https://github.com/fawazahmed0/currency-api) for Fetch current exchange rate of currency.
+- "https://flagsapi.com/countrycode/flat/64.png" for counrty flag.
+- [currency symbol repo](https://gist.github.com/stevekinney/8334552)
+>Note: For more information refer Currency Convertor Info file.
