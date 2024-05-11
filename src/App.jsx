@@ -4,12 +4,12 @@ import useCurrenyCode from './hooks/currencyCode'
 import useCountryCode from './hooks/countryCode';
 import useCurrencySymbols from './hooks/currencySymbols';
 import useCurrencyInfo from './hooks/currencyConvertInfo';
-
+import swapImg from './assets/swap.png'
 
 
 function App() {
 
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("INR");
 
@@ -29,7 +29,7 @@ function App() {
 
   const rate = useCurrencyInfo(from.toLocaleLowerCase(), to.toLocaleLowerCase());
 
-  const [convertAmount, setConvertAmount] = useState(0);
+  const [convertAmount, setConvertAmount] = useState();
   const convertCurrency = () => {
     setConvertAmount(amount * rate);
     // console.log(convertAmount);
@@ -44,9 +44,9 @@ function App() {
   return (
     <>
       <div className='w-full h-screen bg-[url("https://images.unsplash.com/photo-1651341050677-24dba59ce0fd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGN1cnJlbmN5JTIwY29udmVyc2lvbnxlbnwwfHwwfHx8MA%3D%3D")] bg-cover flex justify-center items-center flex-col '>
-        <div className=' w-[95%] rounded-lg sm:w-[60%] py-4 bg-blue-900/30 border-[3px] '>
+        <div className=' w-[95%] rounded-lg sm:w-[60%] lg:w-[45%] py-4 2xl:py-8 bg-blue-900/30 border-[3px] '>
 
-          <h1 className='text-white text-3xl sm:text-4xl text-center font-bold  mb-8'>Currency Convertor</h1>
+          <h1 className='text-white text-3xl sm:text-4xl 2xl:text-[4rem] text-center font-bold  mb-8 2xl:mb-16  '>Currency Convertor</h1>
           <Input
             label={"From"}
             amount={amount}
@@ -60,10 +60,10 @@ function App() {
           <div className=" w-full flex justify-center my-1 ">
             <button
               type="button"
-              className="  border-2 border-white rounded-md bg-blue-500 text-white px-2 py-0.5"
+              className="  border-2 border-white rounded-md 2xl:my-2 bg-blue-500 text-white px-2 py-0.5"
               onClick={swap}
             >
-              swap
+              <img src={swapImg} className='w-8 2xl:w-14'  />
             </button>
           </div>
           <Input
@@ -75,11 +75,11 @@ function App() {
             onCurrencyChange={(currency) => setTo(currency)}
             flag={toFlag} />
 
-          <div className='flex justify-evenly mx-auto w-[90%] sm:w-full py-2 mt-4 font-semibold'>
-            <button type="submit" className=" bg-blue-500 text-white px-4 py-3 rounded-lg border-2" onClick={clear} >
+          <div className='flex justify-evenly mx-auto w-[90%] sm:w-full py-2 mt-4 2xl:mt-8 lg:text-2xl 2xl:text-4xl font-semibold'>
+            <button type="submit" className=" bg-blue-500 text-white px-4 py-3 2xl:px-6 2xl:py-4 rounded-lg border-2" onClick={clear} >
               Clear
             </button>
-            <button type="submit" className=" bg-blue-500 text-white px-4 py-3 rounded-lg border-2" onClick={convertCurrency} >
+            <button type="submit" className=" bg-blue-500 text-white px-4 py-3 2xl:px-6 2xl:py-4 rounded-lg border-2" onClick={convertCurrency} >
               Convert {from} to {to}
             </button>
           </div>
